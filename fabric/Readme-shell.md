@@ -24,16 +24,18 @@ Customers can play, get hands-on experience navigating through the demo environm
 - [Requirements](#requirements)
 - [Before Starting](#before-starting)
   - [Task 1: Power BI Workspace creation](#task-1-power-bi-workspace-creation)
-  - [Task 2: Run the Cloud Shell to provision the demo resources](#task-2-run-the-cloud-shell-to-provision-the-demo-resources)
-  - [Task 3: Creating a Shortcut in Lakehouse](#task-3-creating-a-shortcut-in-lakehouse)
-  - [Task 4: Setting up the Warehouse](#task-4-setting-up-the-warehouse)
-  - [Task 5: Excecuting Notebooks](#task-5-excecuting-notebooks) 
+  - [Task 2: (Optional): Create Streaming Datasets](#task-2-optional-create-streaming-datasets)
+  - [Task 3: Run the Cloud Shell to provision the demo resources](#task-3-run-the-cloud-shell-to-provision-the-demo-resources)
+  - [Task 4: Creating a Shortcut in Lakehouse](#task-4-creating-a-shortcut-in-lakehouse)
+  - [Task 5: Setting up the Warehouse](#task-5-setting-up-the-warehouse)
+  - [Task 6: Creating Internal Shortcut](#task-6-creating-internal-shortcut)
+  - [Task 7: Excecuting Notebooks](#task-7-excecuting-notebooks) 
     - [Creating a new Runtime](#creating-a-new-runtime)
 	- [Running Notebooks](#running-notebooks)
-  - [Task 6: Creating Internal Shortcut](#task-6-creating-internal-shortcut)
-  - [Task 7: KQL DB and QuerySet creation](#task-7-kql-db-and-queryset-creation)
-  - [Task 8: Enabling Data Activator](#task-8-enabling-data-activator)
-  - [Task 9: Creating Semantic Model for PowerBI Copilot](#task-9-creating-semantic-model-for-powerbi-copilot)
+  
+  - [Task 8: KQL DB and QuerySet creation](#task-8-kql-db-and-queryset-creation)
+  - [Task 9: Enabling Data Activator](#task-9-enabling-data-activator)
+  - [Task 10: Creating Semantic Model for PowerBI Copilot](#task-10-creating-semantic-model-for-powerbi-copilot)
 
 - [Appendix](#appendix)
   - [Setting up the Lakehouse](#setting-up-the-lakehouse)
@@ -116,7 +118,7 @@ Customers can play, get hands-on experience navigating through the demo environm
 
 >**Note:** Make sure to add this workspace as a Fabric Trial License as well and note the names of the workspaces and lakehouses. These will be used during script execution (Task 2).
 
-### Task 1.1 (Optional): Create Streaming Datasets
+### Task 2 (Optional): Create Streaming Datasets
 
 1. Navigate to the **contosoSales** Workspace
 
@@ -167,7 +169,7 @@ Customers can play, get hands-on experience navigating through the demo environm
 
 ![Configure the Values.](media/streamingds-occupancy.png)
 
-### Task 2: Run the Cloud Shell to provision the demo resources
+### Task 3: Run the Cloud Shell to provision the demo resources
 
 >**Note:** For this Demo we have assets in an Azure resource group as well as Fabric Workspaces
 
@@ -308,7 +310,7 @@ cd ./fabric/fabric
 
 	<img src="media/cloud-shell-7.png" alt="drawing" width="400"/>
 
-13. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-create-a-resource-group-in-azure).
+13. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-power-bi-workspace-creation).
 
 	<img src="media/cloud-shell-8.png" alt="drawing" width="400"/>
 
@@ -334,7 +336,7 @@ cd ./fabric/fabric
 
 	<img src="media/cloud-shell-11.png" alt="drawing" width="400"/>
 
-21. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-create-a-resource-group-in-azure).
+21. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-power-bi-workspace-creation).
 
 	![Select Same User to Authenticate.](media/cloud-shell-12.png)
 
@@ -367,7 +369,7 @@ cd ./fabric/fabric
 
 >**Note:** Copy the password in Notepad for further reference.
 
-28. **Enter** both the Workspace IDs which you copied in [Task 1](#task-1-power-bi-workspace-and-lakehouse-creation) consecutively.
+28. **Enter** both the Workspace IDs which you copied in [Task 1](#task-1-power-bi-workspace-creation) consecutively.
 
 	![Enter Resource Group name.](media/cloud-shell-14.1.png)
 
@@ -385,7 +387,7 @@ cd ./fabric/fabric
 
 	> **Note:** Be sure to provide the device code before it expires and let the script run until completion.
 
-32. **Select** the user account you used to log into the Azure Portal in [Task 1](#task-1-create-a-resource-group-in-azure). 
+32. **Select** the user account you used to log into the Azure Portal in [Task 1](#task-1-power-bi-workspace-creation). 
 
 	![Select the same user.](media/cloud-shell-18.png)
 
@@ -423,7 +425,7 @@ cd ./fabric/fabric
 
 	![Close the browser.](media/demo-3.png)
 
-### Task 3: Creating a Shortcut in Lakehouse
+### Task 4: Creating a Shortcut in Lakehouse
 
 1. **Open** [Power BI](app.powerbi.com).
 
@@ -451,7 +453,7 @@ cd ./fabric/fabric
 
 	![Lakehouse.](media/demo-9.png)
 
-8. In a new tab, **open** the resource group created in [Task 2](#task-2-run-the-cloud-shell-to-provision-the-demo-resources) with name 'fabric-dpoc-...'.
+8. In a new tab, **open** the resource group created in [Task 3](#task-3-run-the-cloud-shell-to-provision-the-demo-resources) with name 'fabric-dpoc-...'.
 
 9. **Search** for "storage account" and **click** the storage account resource.
 
@@ -506,7 +508,7 @@ cd ./fabric/fabric
 	![Lakehouse.](media/lakehouse-3.png)
 
 
-### Task 4: Setting up the Warehouse
+### Task 5: Setting up the Warehouse
 
 1. In PowerBI, **click** on **Workspaces** and **select** the **contosoSales** workspace. 
 
@@ -544,7 +546,7 @@ cd ./fabric/fabric
 
 	![Datawarehouse.](media/warehouse-6.png)
 
-12. In a new tab, **open** the resource group created in [Task 2](#task-2-run-the-cloud-shell-to-provision-the-demo-resources).
+12. In a new tab, **open** the resource group created in [Task 3](#task-3-run-the-cloud-shell-to-provision-the-demo-resources).
 
 13. **Search** for 'sql server'.
 
@@ -574,7 +576,7 @@ cd ./fabric/fabric
 
 	![Datawarehouse.](media/warehouse-10.png)
 
-23. **Select** 'Basic' for the Authentication kind, **enter** the Username 'labsqladmin' and **patse** the Password you copied in [Task 2](#task-2-run-the-cloud-shell-to-provision-the-demo-resources)
+23. **Select** 'Basic' for the Authentication kind, **enter** the Username 'labsqladmin' and **patse** the Password you copied in [Task 3](#task-3-run-the-cloud-shell-to-provision-the-demo-resources)
 step 28, and **click** on the 'Next' button.
 
 ![Datawarehouse.](media/warehouse-11.png)
@@ -625,7 +627,7 @@ step 28, and **click** on the 'Next' button.
 
 	![Datawarehouse.](media/warehouse-19.png)
 
-35. In a new tab **open** the resource group created in [Task 2](#task-2-run-the-cloud-shell-to-provision-the-demo-resources).
+35. In a new tab **open** the resource group created in [Task 3](#task-3-run-the-cloud-shell-to-provision-the-demo-resources).
 
 36. **Search** for the 'Storage account' **copy** the 'Storage account' name and **paste** it in a notepad for further use.
 
@@ -717,7 +719,49 @@ step 28, and **click** on the 'Next' button.
 
 	![Datawarehouse.](media/warehouse-39.png)
 
-### Task 5: Excecuting Notebooks
+### Task 6: Creating Internal Shortcut
+
+>**Note:** In this task we are creating Internal Shortcut in lakehouse 'Silver To Gold'
+
+1. In Power BI workspace **click** on 'Workspaces' and **select** 'contosoSales'.
+
+	![Close the browser.](media/demo-4.png)
+
+2. **Filter** 'Lakehouse' and then **select** 'lakehouseGold'.
+    
+	![Close the browser.](media/FilterLakehouseGold.png)
+	
+3. **Click** on the 'three dots' infont of Tables and then **select** 'New Shortcut'.
+
+	![Close the browser.](media/LakehouseGoldShortcutupdated.png)
+
+4. In the 'Internal Sources' section **select** 'Microsoft OneLake'.
+
+	![Close the browser.](media/LakehouseGoldShortcut2.png)
+
+5. **Search** for 'lakehouseSilver' in the search box, **click** on 'lakehouseSilver' and then **click** on 'Next'.
+
+	![Close the browser.](media/LakehouseGoldShortcut3.png)
+
+6. **Select** the radio buttons for all the tables listed below and then **click** on 'Next'.
+
+	|	Table Name	|	Create Shortcut From Lakehouse	|
+	| -----------	| ------------- |
+	|	dimension_date|	lakehouseSilver	|
+	|	dimension_product|	lakehouseSilver	|
+	|	dimension_customer|	lakehouseSilver	|
+	|	fact_sales|	lakehouseSilver	|
+	|	fact_campaigndata|	lakehouseSilver	|
+	|||
+
+	![Close the browser.](media/LakehouseGoldShortcut4.png)
+
+7. Finally, **click** on the 'Create' button.
+
+	![Close the browser.](media/LakehouseGoldShortcut5.png)
+
+
+### Task 7: Excecuting Notebooks
 
 ### Creating a new Runtime
 
@@ -776,10 +820,6 @@ step 28, and **click** on the 'Next' button.
 	|	05 Sales Forecasting for Store items in Gold Layer	|	lakehouseSilver	|
 	|||
 
->**Note:** Please complete Task 6 and then execute notebook '05 Sales Forecasting for Store items in Gold Layer'.
-
-> Please comeback to continue with the below given steps after completing Task 6
-
 9. In PowerBI workspace **click** on 'Workspaces' and **select** 'contosoSales'.
 
 	![Close the browser.](media/demo-4.png)
@@ -792,52 +832,7 @@ step 28, and **click** on the 'Next' button.
 
 	![Close the browser.](media/notebook-17.png)
 
-### Task 6: Creating Internal Shortcut
-
->**Note:** In this task we are creating Internal Shortcut in lakehouse 'Silver To Gold'
-
-1. In Power BI workspace **click** on 'Workspaces' and **select** 'contosoSales'.
-
-	![Close the browser.](media/demo-4.png)
-
-2. **Filter** 'Lakehouse' and then **select** 'lakehouseGold'.
-    
-	![Close the browser.](media/FilterLakehouseGold.png)
-	
-3. **Click** on the 'three dots' infont of Tables and then **select** 'New Shortcut'.
-
-	![Close the browser.](media/LakehouseGoldShortcutupdated.png)
-
-4. In the 'Internal Sources' section **select** 'Microsoft OneLake'.
-
-	![Close the browser.](media/LakehouseGoldShortcut2.png)
-
-5. **Search** for 'lakehouseSilver' in the search box, **click** on 'lakehouseSilver' and then **click** on 'Next'.
-
-	![Close the browser.](media/LakehouseGoldShortcut3.png)
-
-6. **Select** the radio buttons for all the tables listed below and then **click** on 'Next'.
-
-	|	Table Name	|	Create Shortcut From Lakehouse	|
-	| -----------	| ------------- |
-	|	dimension_date|	lakehouseSilver	|
-	|	dimension_product|	lakehouseSilver	|
-	|	dimension_customer|	lakehouseSilver	|
-	|	fact_sales|	lakehouseSilver	|
-	|	fact_campaigndata|	lakehouseSilver	|
-	|||
-
-	![Close the browser.](media/LakehouseGoldShortcut4.png)
-
-7. Finally, **click** on the 'Create' button.
-
-	![Close the browser.](media/LakehouseGoldShortcut5.png)
-
-
->**Note:** Once you are done with Task 6 please go back to Task 5 and follow the steps from the point where you had stopped.
-
-
-### Task 7: KQL DB and QuerySet creation
+### Task 8: KQL DB and QuerySet creation
 
 1. In Power BI service click 'Workspaces' and **click** current working workspace. 
 
@@ -861,7 +856,7 @@ step 28, and **click** on the 'Next' button.
 
 	>**Note:** For the rest of the details we will get the data from the resource group.
 
-6. In a new tab **open** the resource group created in [Task 2](#task-2-run-the-cloud-shell-to-provision-the-demo-resources).
+6. In a new tab **open** the resource group created in [Task 3](#task-3-run-the-cloud-shell-to-provision-the-demo-resources).
 
 7. **Search** for 'Event Hub namespace' and **copy** the name of Event Hub namespace and **paste** it in a notepad for further use.
 
@@ -1028,7 +1023,7 @@ step 28, and **click** on the 'Next' button.
      ![Close the browser.](media/kql-db-6.png)
 
 
-### Task 8: Enabling Data Activator
+### Task 9: Enabling Data Activator
 
 1. **Click** on workspace and **select** contosoSales.
 
@@ -1085,7 +1080,7 @@ step 28, and **click** on the 'Next' button.
 
 
 
-### Task 9 : Creating Semantic Model for PowerBI Copilot
+### Task 10: Creating Semantic Model for PowerBI Copilot
 
 1.	**Click** on the 'Workspace' icon and **select** the 'contosoSales' workspace.
 
@@ -1353,7 +1348,7 @@ cd ./fabric/
 
 	![New Browser Window to provide the Authentication Code.](media/cloud-shell-7.png)
 
-8. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-create-a-resource-group-in-azure).
+8. **Select** the user account that is used for logging into the Azure Portal in [Task 1](#task-1-power-bi-workspace-creation).
 
 	![Select the User Account which you want to Authenticate.](media/cloud-shell-8.png)
 
